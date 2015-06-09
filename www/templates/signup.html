@@ -1,0 +1,29 @@
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-positive">
+    	<button class="button button-icon icon ion-ios-close-empty" ng-click="closeSignupModal()"></button>
+    	<h1 class="title">Sign Up</h1>
+    </ion-header-bar>
+    <ion-content>
+    	<form name="signUpForm" novalidate class="padding">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Display Name</span>
+                <input type="text" name="username" ng-model="newUser.username" placeholder="Your Display Name" required/>
+            </label>
+            <label class="item item-input item-floating-label">
+            	<span class="input-label">Email</span>
+              	<input type="email" name="email" ng-model="newUser.email" placeholder="Email" required/>
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Password</span>
+                <input type="password" name="password" ng-model="newUser.password" placeholder="Password" ng-minlength="3" ng-required="true"/>
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Password Confirm</span>
+                <input type="password" name="passwordConfirm" ng-model="newUser.passwordConfirm" placeholder="Confirm Password" />
+            </label>
+            <button class="button button-outline button-light" ng-class="{ 'is-valid' : !signUpForm.password.$invalid }" ng-click="signUp()">
+              	Create Account
+            </button>
+        </form>
+    </ion-content>
+</ion-modal-view>

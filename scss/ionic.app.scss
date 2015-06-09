@@ -1,0 +1,169 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+
+// Colors override
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #6EA4BF;
+$calm:                            #81CFE0;
+$balanced:                        #3FC380;
+$energized:                       #F89406;
+$assertive:                       #D91E18;
+$royal:                           #9B59B6;
+$dark:                            #444 !default;
+$brewtitle:						  #F4D03F;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('Raleway-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+h1, h3, input, button {
+	font-family: 'Raleway', Fallback, sans-serif;
+}
+
+.main {
+	background: url(../img/brew.jpg) no-repeat 50% 50%;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	z-index: 9;
+}/* Empty. Add your own CSS if you like */
+
+label {
+	opacity: .7;
+}
+
+.scroll-content {
+	overflow-y: scroll;
+}
+.button-outline {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.button-clear {
+	width: 100%;
+}
+
+.logo h1 {
+	font-weight: 900;
+	color: white;
+	text-align: center;
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.or-header {
+	color: white;
+	width: 100%;
+	text-align: center;
+}
+
+input {
+	-webkit-transition : all 500ms ease-in;
+  	-moz-transition : all 500ms ease-in;
+ 	-o-transition : all 500ms ease-in;
+  	transition : all 500ms ease-in;
+}
+
+.is-valid {
+
+	border-color: $balanced !important;
+	color: $balanced !important;
+}
+
+.pane {
+	background-color: $light;
+}
+
+.card {
+	font-family: 'Raleway', Fallback, sans-serif;
+	display: inherit;
+	vertical-align: top;
+}
+
+@media (min-width: 540px) {
+	.card {
+		width: 44%;
+		display: inline-block;
+		margin-left: 3%;
+		margin-right: 3%;
+	}
+}
+
+@media (min-width: 867px) {
+	.card {
+		width: 31%;
+		display: inline-block;
+		margin-left: 1.1%;
+		margin-right: 1.1%;
+	}
+}
+
+.editCard {
+	float: right;
+	width: 0%;
+}
+
+.hasLiked {
+	color: blue;
+}
+
+.search-wrapper-light {
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    background: none;
+    border-radius: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
+    color: #ffffff;
+    width: 100%;
+    color: black;
+    padding-left: 5px;
+}
+
+.followButton {
+	height: 50%;
+	top: 25% !important;
+}
+
+.followButton p {
+	color: white;
+}
+
+.beer-type {
+	color: $brewtitle !important;
+}
+
+.signout-button {
+	color: $positive !important;
+	border-color: $positive !important;
+	width: 75%;
+	margin-left: 12.5%;
+}

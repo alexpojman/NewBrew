@@ -1,0 +1,29 @@
+<ion-view>
+  <ion-content class="main" scroll="false">
+    <div class="row row-bottom">
+      <div class="col">
+        <div class="logo">
+          <h1>New Brew</h1>
+        </div>
+        <form name="signInForm" novalidate="" ng-submit="signIn()" class="padding">
+          <label class="item item-input message-input">
+            <input type="email" name="username" ng-model="user.email" placeholder="Email" required/>
+          </label>
+          <label class="item item-input message-input">
+            <input type="password" ng-model="user.password" placeholder="Password" required/>
+          </label>
+          <button class="button button-outline button-light" action="submit">
+            Login
+          </button>
+        </form>
+        <button class="button button-clear button-positive" ng-click="openModal()">
+            forgot password?
+        </button>
+        <h3 class="or-header">-OR-</h3>
+        <button class="button button-clear button-positive" ng-click="openSignupModal()">
+            New to New Brew? Create an Account!
+        </button> 
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,95 @@
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-positive">
+    	<button class="button button-icon icon ion-ios-close-empty" ng-click="closeModal()"></button>
+    	<h1 class="title">Create New Brew</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+    	
+            <label class="item item-input item-stacked-label">
+            	<span class="input-label">Brew Title</span>
+              <input type="text" name="brewTitle" ng-model="brew.title" placeholder="Brew Title" required/>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Description</span>
+                <input type="text" name="brewDescription" ng-model="brew.description" placeholder="Description" required/>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                  Beer Type
+                </div>
+                <select ng-model="brew.type">
+                  <option>Altbier</option>
+                  <option>Amber Ale</option>
+                  <option>Barley Wine</option>
+                  <option>Berliner Weisse</option>
+                  <option>Biere de Garde</option>
+                  <option>Bitter</option>
+                  <option>Blonde Ale</option>
+                  <option>Bock</option>
+                  <option>Brown Ale</option>
+                  <option>California Common/Steam Beer</option>
+                  <option>Cream Ale</option>
+                  <option>Dortmunder Export</option>
+                  <option>Doppelbock</option>
+                  <option>Dunkel</option>
+                  <option>Dunkelweizen</option>
+                  <option>Eisbock</option>
+                  <option>Flanders Red Ale</option>
+                  <option>Golden Ale</option>
+                  <option>Gose</option>
+                  <option>Gueuze</option>
+                  <option>Hefeweizen</option>
+                  <option>Helles</option>
+                  <option>India Pale Ale</option>
+                  <option>Kolsch</option>
+                  <option>Lambic</option>
+                  <option>Light Ale</option>
+                  <option>Maibock</option>
+                  <option>Malt Liquor</option>
+                  <option>Mild</option>
+                  <option>Oktoberfest</option>
+                  <option>Old Ale</option>
+                  <option>Oud Bruin</option>
+                  <option>Pale Ale</option>
+                  <option>Pilsner</option>
+                  <option>Porter</option>
+                  <option>Red Ale</option>
+                  <option>Roggenbier</option>
+                  <option>Saison</option>
+                  <option>Scotch Ale</option>
+                  <option>Stout</option>
+                  <option>Schwarzbier</option>
+                  <option>Vienna Lager</option>
+                  <option>Witbier</option>
+                  <option>Weissbier</option>
+                  <option>Weizenbock</option>
+                </select>
+            </label>            
+            <label class="item item-input">
+                <span class="input-label">OG:</span>
+                <div class="range">
+                  <input type="range" name="brewOG" ng-model="brew.og" min="1.001" max="1.099" step=".001">
+                  <p>{{ brew.og }}</p>
+                </div>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">FG:</span>
+                <div class="range">
+                  <input type="range" name="brewFG" ng-model="brew.fg" min="1.001" max="1.099" step=".001">
+                  <p>{{ brew.fg }}</p>
+                </div>
+            </label>
+            <label class="item">
+              <img ng-hide="!brew.lastPhoto" ng-src="data:image/jpeg;base64,{{brew.lastPhoto}}" style="max-width: 100%">
+              <div>
+                <button class="button button-outline button-positive" ng-click="getPhoto()">
+                  Upload Brew Image
+                </button>
+              </div>
+            </label>
+            <button class="button button-outline button-stable is-valid" ng-click="addBrew()">
+              	Add Brew
+            </button>
+        
+    </ion-content>
+</ion-modal-view>

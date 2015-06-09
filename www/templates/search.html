@@ -1,0 +1,25 @@
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-positive">
+    	<button class="button button-icon icon ion-ios-close-empty" ng-click="closeSearchModal()"></button>
+    	<h1 class="title">Search for Users</h1>
+    </ion-header-bar>
+    <ion-content>
+    <ul class="list">
+      <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" ng-model="search.param" placeholder="Search for User">
+      </label>
+      <a ng-hide="!search.param" class="item item-avatar item-button-right" ng-repeat="user in users | filter:search.param | limitTo: 15">
+        <img src="img/brew.jpg">
+        <h3>{{ user.name }}</h3>
+        <p>{{ user.$id }}</p>
+        <button ng-show="!currentUserIsFollowing(user)" ng-click="followUser(user)" class="button button-positive followButton">
+          <p>Follow</p>
+        </button>
+        <button ng-show="currentUserIsFollowing(user)" class="button button-positive followButton">
+          <p>Already Following!</p>
+        </button>
+      </a>
+    </ul>
+    </ion-content>
+</ion-modal-view>

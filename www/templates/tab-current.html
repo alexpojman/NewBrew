@@ -1,0 +1,53 @@
+<ion-view view-title="Current Brews">
+	<ion-header-bar class="bar bar-header bar-positive">
+    	<button class="button button-icon icon ion-ios-compose-outline" ng-click="openModal()"></button>
+    	<h1 class="title">Brews Feed</h1>
+    </ion-header-bar>
+  <ion-content>
+  	<ion-refresher pulling-text="Pull to refresh" on-refresh="refreshList()">
+    </ion-refresher>
+    <ion-list>
+		<div class="card" ng-repeat="brew in curFeed | orderBy:'date':true | limitTo: 25">
+			<div class="item item-avatar">
+				<button ng-show="checkBrewOwnership(brew)" ng-click="showEdit(brew)" class="button button-clear button-positive editCard">EDIT</button>
+			    <h2>{{ brew.author }}</h2>
+			    <p>{{ brew.date | date:'MMMM dd, yyyy'}}</p>
+			</div>
+			<div class="item item-divider">
+				{{ brew.title }}
+				<p class="beer-type">{{ brew.type | uppercase}}</p>
+				 <p>
+			    	<span>OG: {{ brew.og | number : 3 }} | </span>
+			    	<span>FG: {{ brew.fg | number : 3 }} | </span>
+			    	<span>ABV: {{ brew.abv | number : 2 }}%</span>
+			    </p>
+			</div>			
+			<div class="item item-body">
+				<img ng-hide="!brew.image" class="full-image" src="data:image/jpeg;base64,{{brew.image}}">
+				<h2 ng-show="!brew.image"> No Images Uploaded</h2>
+			    <p>
+			      {{ brew.description }}
+			    </p>
+			    <p>
+			      <a href="#" class="subdued" ng-click="openLikesModal(brew)">{{ brew.numLikes }} Like(s)</a>
+			      <a href="#" class="subdued" ng-click="openCommentsModal(brew)">{{ brew.numComments }} Comment(s)</a>
+			    </p>
+			</div>
+			<div class="item tabs tabs-secondary tabs-icon-left">
+			    <span class="tab-item" ng-class="{'hasLiked': userHasLiked(brew)}" ng-click="handleLike(brew)">
+			      <i class="icon ion-thumbsup"></i>
+			      Like
+			    </span>
+			    <a class="tab-item" href="#">
+			      <i class="icon ion-chatbox"></i>
+			      Comment
+			    </a>
+			    <span class="tab-item" ng-click="openRecipeModal(brew)">
+			      <i class="icon ion-clipboard"></i>
+			      Recipe
+			    </span>
+			</div>
+		</div>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,15 @@
+<ion-view view-title="Followers">
+	<ion-header-bar class="bar bar-header bar-positive">
+    	<h1 class="title">Following</h1>
+    	<button class="button button-icon icon ion-ios-search" ng-click="openSearchModal()"></button>
+    </ion-header-bar>
+	<ion-content>
+		<ion-list>
+			<a class="item item-avatar"ng-repeat="follower in followersList">
+				<img src="img/brew.jpg">
+				<h3>{{ follower.name }}</h3>
+				<p>{{ follower.$id }}</p>
+			</a>
+		</ion-list>
+	</ion-content>
+</ion-view>

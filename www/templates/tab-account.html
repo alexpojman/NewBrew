@@ -1,0 +1,25 @@
+<ion-view view-title="Account">
+	<ion-header-bar class="bar bar-header bar-positive">
+    	<h1 class="title">Account Settings</h1>
+    </ion-header-bar>
+  	<ion-content>
+	    <ion-list>
+	    	<label class="item item-input item-stacked-label">
+            	<span class="input-label">Display Name</span>
+              	<input type="text" ng-change="saveUsername()" name="username" ng-model="userSettings.user.name" placeholder=""/>
+            </label>
+			<li class="item item-toggle">
+			     Show Own Brews in Feed
+			     <label class="toggle toggle-positive">
+			       <input type="checkbox">
+			       <div class="track">
+			         <div class="handle"></div>
+			       </div>
+			     </label>
+			</li>
+	    	<button class="button button-outline signout-button" ng-click="signOut()">
+	              	Signout
+	        </button>
+	    </ion-list>
+  	</ion-content>
+</ion-view>

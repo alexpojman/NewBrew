@@ -1,0 +1,13 @@
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-positive">
+    	<button class="button button-icon icon ion-ios-close-empty" ng-click="closeLikesModal()"></button>
+    	<h1 class="title">Likes</h1>
+    </ion-header-bar>
+    <ion-content>
+    <ul class="list">
+      <li class="item" ng-repeat="liker in likers">
+          {{ liker.name }}
+      </li>
+    </ul>
+    </ion-content>
+</ion-modal-view>
